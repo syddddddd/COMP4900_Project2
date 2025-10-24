@@ -24,7 +24,7 @@ color = Color(5.583167e-06, 0.9859367, 0.87824684, 1)
 [node name="DifficultyHelp" type="Label" parent="."]
 offset_right = 72.0
 offset_bottom = 36.0
-text = "128"
+text = "64"
 label_settings = SubResource("LabelSettings_wmc4k")
 horizontal_alignment = 1
 vertical_alignment = 1
