@@ -70,25 +70,25 @@ layout_mode = 2
 custom_minimum_size = Vector2(660, 50)
 layout_mode = 2
 
-[node name="Bit1" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
-
-[node name="Bit2" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
-position = Vector2(84, 0)
-
-[node name="Bit3" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
-position = Vector2(168, 0)
-
-[node name="Bit4" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
-position = Vector2(252, 0)
-
-[node name="Bit5" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
-position = Vector2(336, 0)
-
-[node name="Bit6" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
-position = Vector2(420, 0)
+[node name="Bit8" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
 
 [node name="Bit7" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
+position = Vector2(84, 0)
+
+[node name="Bit6" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
+position = Vector2(168, 0)
+
+[node name="Bit5" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
+position = Vector2(252, 0)
+
+[node name="Bit4" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
+position = Vector2(336, 0)
+
+[node name="Bit3" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
+position = Vector2(420, 0)
+
+[node name="Bit2" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
 position = Vector2(504, 0)
 
-[node name="Bit8" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
+[node name="Bit1" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
 position = Vector2(588, 0)
