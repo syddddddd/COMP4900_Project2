@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbwhokwotdtv6"]
+[gd_scene load_steps=5 format=3 uid="uid://dbwhokwotdtv6"]
+
+[ext_resource type="Script" uid="uid://c05nk50lqx7tq" path="res://start_button.gd" id="1_1h7vm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ajkgm"]
 font_size = 59
@@ -35,3 +37,6 @@ offset_bottom = 388.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_1h7vm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k1fio")
 text = "Start"
+script = ExtResource("1_1h7vm")
+
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
