@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://dbwhokwotdtv6"]
+[gd_scene load_steps=4 format=3 uid="uid://dbwhokwotdtv6"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_ajkgm"]
+font_size = 59
+font_color = Color(0.3254902, 0.20392157, 1, 1)
+outline_size = 6
+outline_color = Color(0, 0.003921569, 0.023529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h7vm"]
+bg_color = Color(0.33781466, 0.6000717, 0.97314876, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1fio"]
+bg_color = Color(0.7244661, 0.9329188, 0.9900653, 1)
+
+[node name="HomePage" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 649.0
+color = Color(0.7670034, 0.88246983, 0.9477405, 1)
+
+[node name="GameTitle" type="Label" parent="."]
+offset_left = 325.0
+offset_top = 91.0
+offset_right = 815.0
+offset_bottom = 173.0
+text = "Insert name here"
+label_settings = SubResource("LabelSettings_ajkgm")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 395.0
+offset_top = 258.0
+offset_right = 713.0
+offset_bottom = 388.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1h7vm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k1fio")
+text = "Start"
