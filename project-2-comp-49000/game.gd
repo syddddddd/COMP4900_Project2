@@ -125,6 +125,7 @@ func end_game():
 	is_game_active = false
 	time_remaining = 0
 	update_timer_display()  # Show 0:00
+	reset_bits()
 
 	# Show game over message
 	target_label.text = "GAME OVER\nPress SPACE to play again"
