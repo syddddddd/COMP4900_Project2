@@ -6,3 +6,4 @@ func ready() -> void:
 
 func _on_pressed() -> void:
 	print("Start Button pressed")
+	get_tree().change_scene_to_file("res://Game.tscn")
