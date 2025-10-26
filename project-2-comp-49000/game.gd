@@ -111,7 +111,7 @@ func reset_bits():
 	current_value = 0
 	
 
-	current_value_label.text = "Current: 0"
+	current_value_label.text = "0"
 
 func update_score_display():
 	score_label.text = "Score: %d" % score
