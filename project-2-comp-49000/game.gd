@@ -99,8 +99,8 @@ func check_if_correct():
 		generate_new_target()
 
 func generate_new_target():
-	# Generate a random number between 0-255 (for 8 bits)
-	target_number = randi() % 256
+	# Generate a random number between 1-255 (for 8 bits)
+	target_number = (randi() % 255) + 1
 	target_label.text = str(target_number)
 	
 	print("New target: ", target_number)
