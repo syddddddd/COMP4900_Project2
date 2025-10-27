@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://lol6twad70hw"]
+
+[sub_resource type="Theme" id="Theme_boddn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 649.0
+color = Color(0.7670034, 0.88246983, 0.9477405, 1)
+
+[node name="DifficultyTitle" type="Label" parent="."]
+offset_left = 317.0
+offset_top = 68.0
+offset_right = 828.0
+offset_bottom = 127.0
+theme = SubResource("Theme_boddn")
+theme_override_colors/font_color = Color(0.03137255, 0.21176471, 1, 1)
+theme_override_font_sizes/font_size = 43
+text = "Enter Your Name "
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1154.0
+offset_bottom = 649.0
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+placeholder_text = "Ex. Eddie"
+caret_blink = true
