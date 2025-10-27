@@ -126,12 +126,17 @@ func end_game():
 	time_remaining = 0
 	update_timer_display()  # Show 0:00
 	reset_bits()
-	Global.reset()
-
+	
+	# save info on file
+	saveFile()
+	Global.reset();
+	
 	# Show game over message
-	target_label.text = "GAME OVER\nPress SPACE to play again"
+	#target_label.text = "GAME OVER\nPress SPACE to play again"
 
 	print("Game Over! Final Score: ", score)
+	
+	get_tree().change_scene_to_file("res://score.tscn")
 
 func _input(event):
 	# Add restart with spacebar or something
@@ -162,3 +167,29 @@ func reset_game():
 	# Restart the game
 	is_game_active = true
 	print("Game restarted!")
+
+func saveFile() -> void:
+	var list = []
+	
+	var filepath = ""
+	
+	if Global.level == "easy":
+		filepath = 'res://scoreEasy.data'
+	if Global.level == "medium":
+		filepath = 'res://scoreMedium.data'
+	if Global.level == "hard":
+		filepath = 'res://scoreHard.data'
+	
+	if FileAccess.file_exists(filepath):
+		var file = FileAccess.open(filepath, FileAccess.READ)
+		list = file.get_var()
+		list.append([Global.playername,score])
+		
+		file = FileAccess.open(filepath, FileAccess.WRITE)
+		file.store_var(list)
+		file.close()
+	else:
+		var file = FileAccess.open(filepath, FileAccess.WRITE)
+		list.append([Global.playername,score])
+		file.store_var(list)
+		file.close()
