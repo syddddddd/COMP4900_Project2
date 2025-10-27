@@ -26,8 +26,9 @@ offset_left = 325.0
 offset_top = 91.0
 offset_right = 815.0
 offset_bottom = 173.0
-text = "Insert name here"
+text = "Bit by Bit"
 label_settings = SubResource("LabelSettings_ajkgm")
+horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
 offset_left = 395.0
