@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://lol6twad70hw"]
+[gd_scene load_steps=4 format=3 uid="uid://lol6twad70hw"]
 
 [ext_resource type="Script" uid="uid://723yndgu01gp" path="res://name_select.gd" id="1_tc8jb"]
 
 [sub_resource type="Theme" id="Theme_boddn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tc8jb"]
+font_color = Color(0.03137255, 0.21176471, 1, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tc8jb")
@@ -21,6 +24,15 @@ theme = SubResource("Theme_boddn")
 theme_override_colors/font_color = Color(0.03137255, 0.21176471, 1, 1)
 theme_override_font_sizes/font_size = 43
 text = "Enter Your Name "
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 427.0
+offset_top = 340.0
+offset_right = 734.0
+offset_bottom = 392.0
+text = "press ENTER when ready"
+label_settings = SubResource("LabelSettings_tc8jb")
 horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
