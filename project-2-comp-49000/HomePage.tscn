@@ -22,10 +22,10 @@ offset_bottom = 649.0
 color = Color(0.7670034, 0.88246983, 0.9477405, 1)
 
 [node name="GameTitle" type="Label" parent="."]
-offset_left = 325.0
-offset_top = 91.0
-offset_right = 815.0
-offset_bottom = 173.0
+offset_left = 300.0
+offset_top = 92.0
+offset_right = 790.0
+offset_bottom = 174.0
 text = "Bit by Bit"
 label_settings = SubResource("LabelSettings_ajkgm")
 horizontal_alignment = 1

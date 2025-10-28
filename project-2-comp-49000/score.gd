@@ -32,7 +32,7 @@ func _ready() -> void:
 		hardScore.add_item(line)
 
 static func sort(a, b):
-		return a[1] < b[1]
+		return a[1] > b[1]
 
 func loadFiles() -> void:
 	
