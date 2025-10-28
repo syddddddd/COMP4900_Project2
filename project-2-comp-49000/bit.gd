@@ -48,7 +48,7 @@ func update_values():
 	if Global.level == "easy":
 		helper.text ="%d" %bit_value
 	if Global.level == "medium":
-		helper.text = "2^" + str(bit_index)
+		helper.text = "%d" %bit_value
 	if Global.level == "hard":
 		helper.text = ""
 	update_display()
