@@ -11,7 +11,7 @@ extends Area2D
 var is_on: bool = false
 
 # Colors for visual feedback
-var color_off = Color(0.2, 0.2, 0.3)
+var color_off = Color(1, 1, 1)
 var color_on = Color(0.3, 0.8, 0.5)
 
 signal bit_toggled(bit_index, is_on, bit_value)
