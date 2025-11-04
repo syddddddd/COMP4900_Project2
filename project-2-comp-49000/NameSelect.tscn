@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://lol6twad70hw"]
+[gd_scene load_steps=6 format=3 uid="uid://lol6twad70hw"]
 
 [ext_resource type="Script" uid="uid://723yndgu01gp" path="res://name_select.gd" id="1_tc8jb"]
+[ext_resource type="Texture2D" uid="uid://csn7ey8vpbfpf" path="res://images/bg-full.jpeg" id="2_3thr1"]
 
 [sub_resource type="Theme" id="Theme_boddn"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_3thr1"]
+font_size = 46
+
 [sub_resource type="LabelSettings" id="LabelSettings_tc8jb"]
-font_color = Color(0.03137255, 0.21176471, 1, 1)
+font_size = 21
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tc8jb")
@@ -13,34 +17,42 @@ script = ExtResource("1_tc8jb")
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1154.0
 offset_bottom = 649.0
-color = Color(0.7670034, 0.88246983, 0.9477405, 1)
+color = Color(0.09019608, 0.11372549, 0.3019608, 1)
+
+[node name="bg-full" type="Sprite2D" parent="Background"]
+position = Vector2(727.49994, 325.625)
+scale = Vector2(1.4526143, 1.6694373)
+texture = ExtResource("2_3thr1")
 
 [node name="DifficultyTitle" type="Label" parent="."]
-offset_left = 317.0
-offset_top = 68.0
-offset_right = 828.0
-offset_bottom = 127.0
+offset_left = 83.0
+offset_top = 124.0
+offset_right = 594.0
+offset_bottom = 183.0
 theme = SubResource("Theme_boddn")
 theme_override_colors/font_color = Color(0.03137255, 0.21176471, 1, 1)
 theme_override_font_sizes/font_size = 43
 text = "Enter Your Name "
+label_settings = SubResource("LabelSettings_3thr1")
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]
-offset_left = 427.0
-offset_top = 340.0
-offset_right = 734.0
-offset_bottom = 392.0
-text = "press ENTER when ready"
+offset_left = 145.0
+offset_top = 279.0
+offset_right = 452.0
+offset_bottom = 331.0
+text = "Press ENTER when ready"
 label_settings = SubResource("LabelSettings_tc8jb")
-horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-offset_right = 1154.0
-offset_bottom = 649.0
+offset_left = -14.0
+offset_top = 16.0
+offset_right = 606.0
+offset_bottom = 447.0
 
 [node name="LineEdit" type="LineEdit" parent="CenterContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 placeholder_text = "Ex. Eddie"
 caret_blink = true

@@ -6,11 +6,11 @@
 size = Vector2(72, 113)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wmc4k"]
-font_color = Color(1, 0.2, 0.58431375, 1)
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nie6h"]
 font_size = 58
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.09019608, 0.11372549, 0.3019608, 1)
 
 [node name="Bit1" type="Area2D"]
 script = ExtResource("1_wmc4k")
@@ -23,7 +23,6 @@ shape = SubResource("RectangleShape2D_l1wfj")
 offset_right = 72.0
 offset_bottom = 113.0
 mouse_filter = 2
-color = Color(5.583167e-06, 0.9859367, 0.87824684, 1)
 
 [node name="DifficultyHelp" type="Label" parent="."]
 offset_right = 72.0

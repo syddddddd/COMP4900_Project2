@@ -1,19 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp853q3eqwkuw"]
+[gd_scene load_steps=7 format=3 uid="uid://bp853q3eqwkuw"]
 
 [ext_resource type="PackedScene" uid="uid://o5ayisyicsiv" path="res://bit.tscn" id="1_wbfu4"]
 [ext_resource type="Script" uid="uid://xhu4d8nfstr8" path="res://game.gd" id="1_xkndl"]
+[ext_resource type="Texture2D" uid="uid://csn7ey8vpbfpf" path="res://images/bg-full.jpeg" id="2_u44n3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ubv3"]
 font_size = 40
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wbfu4"]
-font_size = 40
-font_color = Color(0, 0.76862746, 0, 1)
+font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_xkndl"]
 font_size = 70
-font_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_xkndl")
@@ -21,11 +19,17 @@ script = ExtResource("1_xkndl")
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.7670034, 0.88246983, 0.9477405, 1)
+color = Color(0.09019608, 0.11372549, 0.3019608, 1)
+
+[node name="BgFull" type="Sprite2D" parent="Background"]
+position = Vector2(1012.5, 321.49997)
+scale = Vector2(1.5310459, 1.7570331)
+texture = ExtResource("2_u44n3")
 
 [node name="TopBar" type="HBoxContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 55.0
+offset_left = 48.0
+offset_right = 867.0
+offset_bottom = 69.0
 
 [node name="Score" type="Label" parent="TopBar"]
 layout_mode = 2
@@ -51,8 +55,8 @@ text = "Time: 0"
 label_settings = SubResource("LabelSettings_6ubv3")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 917.0
+offset_bottom = 513.0
 
 [node name="Game Area" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -69,6 +73,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="current value" type="Label" parent="CenterContainer/Game Area"]
+custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_xkndl")
