@@ -9,20 +9,23 @@ extends Area2D
 @onready var helper = $DifficultyHelp
 
 var is_on: bool = false
+var is_disabled: bool = true
 
 # Colors for visual feedback
 var color_off = Color(1, 1, 1)
 var color_on = Color(0.3, 0.8, 0.5)
+var color_dissabled = Color(1.0, 0.288, 0.226, 1.0)
 
 signal bit_toggled(bit_index, is_on, bit_value)
 
 func _ready():
 	input_event.connect(_on_input_event)
 	update_display()
+	disableBit()
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and is_disabled==false:
 			toggle()
 
 func toggle():
@@ -31,6 +34,10 @@ func toggle():
 	bit_toggled.emit(bit_index, is_on, bit_value)
 
 func update_display():
+	if is_disabled:
+		if background:
+			background.color = color_dissabled
+		return
 	if is_on:
 		bit_label.text = "1"
 		if background:
@@ -52,4 +59,18 @@ func update_values():
 	if Global.level == "hard":
 		helper.text = ""
 	update_display()
+	
+func disableBit():
+	is_disabled = true
+	print("bit disbabled")
+	if background:
+		background.color = color_dissabled
+
+func enableBit():
+	is_disabled = false
+	if background:
+		background.color = color_off
+
+
+	
 	
