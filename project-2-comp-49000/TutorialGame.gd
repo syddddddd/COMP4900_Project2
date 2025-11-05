@@ -116,8 +116,10 @@ func show_start_screen():
 
 func start_game():
 	score = 0
-	time_remaining = 60.0  
+	time_remaining = 600.0  
 	is_game_active = true
+	game_started = true
+	continue_label.text = "Press SPACE to exit tutorial"
 	Enable_all_bits()
 	
 	update_score_display()
@@ -212,11 +214,17 @@ func _input(event):
 		advance_tutorial()
 		return
 
+	if is_game_active and event.is_action_pressed("ui_accept"):
+		if game_started:
+			is_game_active = false
+			game_started = false
+			end_game()
+	
 	# Add restart with spacebar or something
 	if not is_game_active and event.is_action_pressed("ui_accept"):
 		if game_started:
 			# Game over, restart
-			reset_game()
+			end_game()
 		else:
 			# First time starting
 			start_game()

@@ -51,7 +51,7 @@ size_flags_horizontal = 3
 
 [node name="Number" type="Label" parent="TopBar"]
 layout_mode = 2
-text = "Bitbybit"
+text = "Bit by Bit"
 label_settings = SubResource("LabelSettings_wbfu4")
 
 [node name="spacer" type="Control" parent="TopBar"]

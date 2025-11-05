@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbwhokwotdtv6"]
+[gd_scene load_steps=7 format=3 uid="uid://dbwhokwotdtv6"]
 
 [ext_resource type="Script" uid="uid://c05nk50lqx7tq" path="res://start_button.gd" id="1_1h7vm"]
 [ext_resource type="Texture2D" uid="uid://csn7ey8vpbfpf" path="res://images/bg-full.jpeg" id="1_k1fio"]
+[ext_resource type="Script" uid="uid://chyq0traugo8n" path="res://tutorial_button.gd" id="3_b8wn7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ajkgm"]
 font_size = 69
@@ -36,13 +37,25 @@ label_settings = SubResource("LabelSettings_ajkgm")
 
 [node name="StartButton" type="Button" parent="."]
 offset_left = 187.0
-offset_top = 337.0
-offset_right = 505.0
-offset_bottom = 467.0
+offset_top = 326.0
+offset_right = 491.0
+offset_bottom = 406.0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1h7vm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k1fio")
 text = "Start"
 script = ExtResource("1_1h7vm")
 
+[node name="TutorialButton" type="Button" parent="."]
+offset_left = 187.0
+offset_top = 416.0
+offset_right = 491.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_1h7vm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k1fio")
+text = "Tutorial"
+script = ExtResource("3_b8wn7")
+
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
+[connection signal="pressed" from="TutorialButton" to="TutorialButton" method="_on_pressed"]
