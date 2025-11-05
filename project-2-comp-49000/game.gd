@@ -21,6 +21,7 @@ func _ready():
 	initialize_bits()
 	Disable_all_bits()
 	show_start_screen()
+	AudioManager.play_theme_for_level(Global.level)
 	
 	if Global.level == "medium" or Global.level == "hard":
 		current_value_label.visible = false
@@ -96,6 +97,7 @@ func calculate_current_value():
 
 func check_if_correct():
 	if current_value == target_number:
+		AudioManager.play_correct()
 		# Correct answer!
 		score += 1
 		update_score_display()
@@ -142,6 +144,7 @@ func end_game():
 	time_remaining = 0
 	update_timer_display()  # Show 0:00
 	reset_bits()
+	AudioManager.stop_music()
 	
 	# save info on file
 	saveFile()
