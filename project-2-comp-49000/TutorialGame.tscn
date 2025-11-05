@@ -1,0 +1,278 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7vilb7ysf48i"]
+
+[ext_resource type="Script" uid="uid://lijo6r6p0th" path="res://TutorialGame.gd" id="1_7es3g"]
+[ext_resource type="Texture2D" uid="uid://csn7ey8vpbfpf" path="res://images/bg-full.jpeg" id="2_7es3g"]
+[ext_resource type="PackedScene" uid="uid://o5ayisyicsiv" path="res://bit.tscn" id="3_m6wip"]
+[ext_resource type="Texture2D" uid="uid://cy6b5fh481uy4" path="res://images/arrow.png" id="4_m6wip"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ubv3"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbfu4"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_xkndl"]
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_4un7v"]
+font_size = 20
+font_color = Color(1, 0.5304947, 0.49319828, 1)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_7es3g")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.09019608, 0.11372549, 0.3019608, 1)
+
+[node name="BgFull" type="Sprite2D" parent="Background"]
+position = Vector2(1012.5, 321.49997)
+scale = Vector2(1.5310459, 1.7570331)
+texture = ExtResource("2_7es3g")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+offset_left = 48.0
+offset_right = 867.0
+offset_bottom = 69.0
+
+[node name="Score" type="Label" parent="TopBar"]
+layout_mode = 2
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_6ubv3")
+
+[node name="spacer2" type="Control" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Number" type="Label" parent="TopBar"]
+layout_mode = 2
+text = "Bitbybit"
+label_settings = SubResource("LabelSettings_wbfu4")
+
+[node name="spacer" type="Control" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Timer" type="Label" parent="TopBar"]
+layout_mode = 2
+text = "Time: 0"
+label_settings = SubResource("LabelSettings_6ubv3")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 917.0
+offset_bottom = 513.0
+
+[node name="Game Area" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="target number" type="Label" parent="CenterContainer/Game Area"]
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_xkndl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer" type="Control" parent="CenterContainer/Game Area"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="current value" type="Label" parent="CenterContainer/Game Area"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_xkndl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bits" type="HBoxContainer" parent="CenterContainer/Game Area"]
+custom_minimum_size = Vector2(660, 50)
+layout_mode = 2
+
+[node name="Bit8" parent="CenterContainer/Game Area/Bits" instance=ExtResource("3_m6wip")]
+
+[node name="Bit7" parent="CenterContainer/Game Area/Bits" instance=ExtResource("3_m6wip")]
+position = Vector2(84, 0)
+
+[node name="Bit6" parent="CenterContainer/Game Area/Bits" instance=ExtResource("3_m6wip")]
+position = Vector2(168, 0)
+
+[node name="Bit5" parent="CenterContainer/Game Area/Bits" instance=ExtResource("3_m6wip")]
+position = Vector2(252, 0)
+
+[node name="Bit4" parent="CenterContainer/Game Area/Bits" instance=ExtResource("3_m6wip")]
+position = Vector2(336, 0)
+
+[node name="Bit3" parent="CenterContainer/Game Area/Bits" instance=ExtResource("3_m6wip")]
+position = Vector2(420, 0)
+
+[node name="Bit2" parent="CenterContainer/Game Area/Bits" instance=ExtResource("3_m6wip")]
+position = Vector2(504, 0)
+
+[node name="Bit1" parent="CenterContainer/Game Area/Bits" instance=ExtResource("3_m6wip")]
+position = Vector2(588, 0)
+
+[node name="tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="step1" type="Control" parent="tutorial"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="tutorial/step1"]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 562.00006
+offset_right = 679.19305
+offset_bottom = 669.1787
+rotation = 2.6179938
+texture = ExtResource("4_m6wip")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Label" type="Label" parent="tutorial/step1"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 513.0
+offset_right = 392.0
+offset_bottom = 603.0
+text = "Click on bits to flip them on (1) or off (0) using the mouse "
+label_settings = SubResource("LabelSettings_4un7v")
+autowrap_mode = 3
+
+[node name="step2" type="Control" parent="tutorial"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="tutorial/step2"]
+layout_mode = 0
+offset_left = 773.0
+offset_top = 324.0
+offset_right = 880.054
+offset_bottom = 423.914
+rotation = 0.2617994
+texture = ExtResource("4_m6wip")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Label" type="Label" parent="tutorial/step2"]
+layout_mode = 0
+offset_left = 809.0
+offset_top = 425.0
+offset_right = 1037.0
+offset_bottom = 515.0
+text = "The value each bit has if flipped (Easy and Medium difficulty)"
+label_settings = SubResource("LabelSettings_4un7v")
+autowrap_mode = 3
+
+[node name="step3" type="Control" parent="tutorial"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="tutorial/step3"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 208.99998
+offset_right = 400.1449
+offset_bottom = 327.36444
+rotation = -0.2617994
+texture = ExtResource("4_m6wip")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="tutorial/step3"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 273.0
+offset_right = 385.0
+offset_bottom = 363.0
+text = "The current sum of your flipped bits (Easy difficulty only)"
+label_settings = SubResource("LabelSettings_4un7v")
+autowrap_mode = 3
+
+[node name="step4" type="Control" parent="tutorial"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="tutorial/step4"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 294.00003
+offset_right = 715.1449
+offset_bottom = 412.3645
+rotation = -2.8797934
+texture = ExtResource("4_m6wip")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="tutorial/step4"]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 105.0
+offset_right = 767.0
+offset_bottom = 195.0
+text = "The target number you are trying to convert to"
+label_settings = SubResource("LabelSettings_4un7v")
+autowrap_mode = 3
+
+[node name="step5" type="Control" parent="tutorial"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="tutorial/step5"]
+layout_mode = 0
+offset_left = 917.0
+offset_top = 40.0
+offset_right = 1048.1449
+offset_bottom = 158.36446
+rotation = 1.3089969
+texture = ExtResource("4_m6wip")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Label" type="Label" parent="tutorial/step5"]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 195.0
+offset_right = 972.0
+offset_bottom = 285.0
+text = "Time remaining before the round ends"
+label_settings = SubResource("LabelSettings_4un7v")
+autowrap_mode = 3
+
+[node name="step6" type="Control" parent="tutorial"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="tutorial/step6"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 209.00002
+offset_right = 259.14496
+offset_bottom = 321.1419
+rotation = -2.3561945
+texture = ExtResource("4_m6wip")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="tutorial/step6"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 119.0
+offset_right = 363.0
+offset_bottom = 209.0
+text = "Score increments for each correct conversion"
+label_settings = SubResource("LabelSettings_4un7v")
+autowrap_mode = 3
