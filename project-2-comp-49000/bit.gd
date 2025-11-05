@@ -52,10 +52,7 @@ func reset():
 	update_display()
 
 func update_values():
-	if Global.level == "easy":
-		helper.text ="%d" %bit_value
-	if Global.level == "medium":
-		helper.text = "%d" %bit_value
+	helper.text = "%d" %bit_value
 	if Global.level == "hard":
 		helper.text = ""
 	update_display()

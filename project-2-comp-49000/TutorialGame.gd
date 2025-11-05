@@ -6,6 +6,7 @@ extends Node
 @onready var timer_label = $"TopBar/Timer"
 @onready var current_value_label = $"CenterContainer/Game Area/current value"
 @onready var tutorial_overlay = $tutorial
+@onready var continue_label = $continue
 
 # Tutorial steps
 @onready var steps = [
@@ -35,6 +36,7 @@ var game_started: bool = false  # Track if game has ever started
 func _ready():
 	initialize_bits()
 	Disable_all_bits()
+	reset_bits()
 	setup_tutorial()
 	# show_start_screen()
 	
@@ -71,12 +73,17 @@ func end_tutorial():
 	tutorial_overlay.visible = false
 	
 	print("Tutorial Complete!")
+	
+	continue_label.text = "Try it out!"
+	
+	show_start_screen()
 
 func initialize_bits():
 	# Get all bit children from the Bits container
 	for i in range(bits_container.get_child_count()):
 		var bit = bits_container.get_child(bits_container.get_child_count()-i-1)
 		
+		print(i)
 		# Set the bit's properties
 		bit.bit_index = i
 		bit.bit_value = int(pow(2, i))  # 2^i: 1, 2, 4, 8, 16, 32, 64, 128
@@ -190,15 +197,15 @@ func end_game():
 	reset_bits()
 	
 	# save info on file
-	saveFile()
-	Global.reset();
+	#saveFile()
+	#Global.reset();
 	
 	# Show game over message
 	#target_label.text = "GAME OVER\nPress SPACE to play again"
 
 	print("Game Over! Final Score: ", score)
 	
-	get_tree().change_scene_to_file("res://score.tscn")
+	get_tree().change_scene_to_file("res://HomePage.tscn")
 
 func _input(event):
 	if tutorial_active and event.is_action_pressed("ui_accept"):  # Spacebar
