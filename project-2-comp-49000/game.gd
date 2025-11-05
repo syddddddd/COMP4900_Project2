@@ -19,7 +19,12 @@ var game_started: bool = false  # Track if game has ever started
 
 func _ready():
 	initialize_bits()
+	Disable_all_bits()
 	show_start_screen()
+	
+	if Global.level == "medium" or Global.level == "hard":
+		current_value_label.visible = false
+	
 
 func initialize_bits():
 	# Get all bit children from the Bits container
@@ -60,6 +65,7 @@ func start_game():
 	score = 0
 	time_remaining = 60.0  
 	is_game_active = true
+	Enable_all_bits()
 	
 	update_score_display()
 	generate_new_target()
@@ -77,8 +83,6 @@ func _on_bit_toggled(_bit_index, _is_on, _bit_value):
 	check_if_correct()
 
 func calculate_current_value():
-	if Global.level == "medium" or Global.level == "hard":
-		current_value_label.visible = false
 		
 	
 	current_value = 0
@@ -124,6 +128,14 @@ func update_timer_display():
 	var minutes = int(time_remaining) / 60.0
 	var seconds = int(time_remaining) % 60
 	timer_label.text = "Time: %d:%02d" % [minutes, seconds]
+	
+func Disable_all_bits():
+	for i in bits:
+		i.disableBit()
+
+func Enable_all_bits():
+	for i in bits:
+		i.enableBit()
 
 func end_game():
 	is_game_active = false
