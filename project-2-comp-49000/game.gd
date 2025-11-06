@@ -15,7 +15,8 @@ var bits = []
 var target_number: int = 0
 var current_value: int = 0
 var score: int = 0
-var time_remaining: float = 60.0  # Default 60 seconds, adjust as needed
+var time_remaining: float = 90.0  # Default 60 seconds, adjust as needed
+var TIME_LIMIT: float = 90.0
 var is_game_active: bool = false
 var game_started: bool = false  # Track if game has ever started
 
@@ -59,7 +60,7 @@ func show_start_screen():
 
 	# Initialize displays
 	score = 0
-	time_remaining = 60.0
+	time_remaining = TIME_LIMIT
 	update_score_display()
 	update_timer_display()
 
@@ -67,8 +68,7 @@ func show_start_screen():
 	reset_bits()
 
 func start_game():
-	score = 0
-	time_remaining = 60.0  
+	score = 0  
 	is_game_active = true
 	Enable_all_bits()
 	
