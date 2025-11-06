@@ -34,6 +34,7 @@ var is_game_active: bool = false
 var game_started: bool = false  # Track if game has ever started
 
 func _ready():
+	AudioManager.play_main_theme()
 	initialize_bits()
 	Disable_all_bits()
 	reset_bits()
@@ -151,6 +152,7 @@ func calculate_current_value():
 
 func check_if_correct():
 	if current_value == target_number:
+		AudioManager.play_correct()
 		# Correct answer!
 		score += 1
 		update_score_display()

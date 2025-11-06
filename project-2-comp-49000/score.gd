@@ -14,6 +14,8 @@ var hardlist = []
 var line = ""
 
 func _ready() -> void:
+	AudioManager.stop_music()
+	AudioManager.play_main_theme()
 	loadFiles()
 	easylist.sort_custom(sort)
 	mediumlist.sort_custom(sort)
@@ -52,7 +54,9 @@ func loadFiles() -> void:
 		file3.close()
 
 func _on_start_over_pressed() -> void:
+	AudioManager.play_click()
 	get_tree().change_scene_to_file("res://Difficulty.tscn")
 
 func _on_quit_pressed() -> void:
+	AudioManager.play_click()
 	get_tree().quit()

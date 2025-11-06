@@ -8,4 +8,5 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
+	AudioManager.play_click()
 	get_tree().change_scene_to_file("res://TutorialGame.tscn")

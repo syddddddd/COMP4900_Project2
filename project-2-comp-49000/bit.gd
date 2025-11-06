@@ -30,6 +30,7 @@ func _on_input_event(_viewport, event, _shape_idx):
 
 func toggle():
 	is_on = !is_on
+	AudioManager.play_click()
 	update_display()
 	bit_toggled.emit(bit_index, is_on, bit_value)
 
