@@ -52,7 +52,7 @@ func loadFiles() -> void:
 		file3.close()
 
 func _on_start_over_pressed() -> void:
-	get_tree().change_scene_to_file("res://HomePage.tscn")
+	get_tree().change_scene_to_file("res://Difficulty.tscn")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
