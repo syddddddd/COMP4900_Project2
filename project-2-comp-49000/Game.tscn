@@ -58,6 +58,14 @@ label_settings = SubResource("LabelSettings_6ubv3")
 offset_right = 917.0
 offset_bottom = 513.0
 
+[node name="Timer" type="Timer" parent="CenterContainer"]
+
+[node name="Feedback" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.03529412, 1, 0.039215688, 1)
+theme_override_font_sizes/font_size = 25
+text = "Got it!"
+
 [node name="Game Area" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
@@ -106,3 +114,5 @@ position = Vector2(504, 0)
 
 [node name="Bit1" parent="CenterContainer/Game Area/Bits" instance=ExtResource("1_wbfu4")]
 position = Vector2(588, 0)
+
+[connection signal="timeout" from="CenterContainer/Timer" to="." method="_on_timer_timeout"]

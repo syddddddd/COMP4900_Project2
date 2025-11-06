@@ -5,6 +5,8 @@ extends Node
 @onready var score_label = $"TopBar/Score"
 @onready var timer_label = $"TopBar/Timer"
 @onready var current_value_label = $"CenterContainer/Game Area/current value"
+@onready var feedback = $"CenterContainer/Feedback"
+@onready var feedback_timer = $"CenterContainer/Timer"
 
 # Array to hold all bit nodes
 var bits = []
@@ -21,6 +23,8 @@ func _ready():
 	initialize_bits()
 	Disable_all_bits()
 	show_start_screen()
+	
+	feedback.visible = false
 	
 	if Global.level == "medium" or Global.level == "hard":
 		current_value_label.visible = false
@@ -100,12 +104,21 @@ func check_if_correct():
 		score += 1
 		update_score_display()
 		
+		show_feedback()
+			
 		print("Correct! Score: ", score)
 		
 		# Reset and generate new target
 		reset_bits()
 		generate_new_target()
 
+func show_feedback():
+	feedback.visible = true
+	feedback_timer.start()
+
+func _on_timer_timeout() -> void:
+	feedback.visible = false
+	
 func generate_new_target():
 	# Generate a random number between 1-255 (for 8 bits)
 	target_number = (randi() % 255) + 1
