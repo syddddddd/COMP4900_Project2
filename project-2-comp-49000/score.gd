@@ -15,6 +15,7 @@ var line = ""
 
 func _ready() -> void:
 	AudioManager.stop_music()
+	AudioManager.play_main_theme()
 	loadFiles()
 	easylist.sort_custom(sort)
 	mediumlist.sort_custom(sort)
