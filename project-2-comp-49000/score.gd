@@ -55,7 +55,7 @@ func loadFiles() -> void:
 
 func _on_start_over_pressed() -> void:
 	AudioManager.play_click()
-	get_tree().change_scene_to_file("res://HomePage.tscn")
+	get_tree().change_scene_to_file("res://Difficulty.tscn")
 
 func _on_quit_pressed() -> void:
 	AudioManager.play_click()
