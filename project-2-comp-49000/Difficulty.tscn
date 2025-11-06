@@ -47,7 +47,7 @@ offset_top = 323.0
 offset_right = 431.0
 offset_bottom = 416.0
 theme_override_font_sizes/font_size = 30
-text = "Medium"
+text = "Hard"
 
 [node name="Hard" type="Button" parent="."]
 offset_left = 151.0
@@ -55,7 +55,7 @@ offset_top = 468.0
 offset_right = 431.0
 offset_bottom = 561.0
 theme_override_font_sizes/font_size = 30
-text = "Hard"
+text = "Extreme"
 
 [connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="Medium" to="." method="_on_medium_pressed"]
